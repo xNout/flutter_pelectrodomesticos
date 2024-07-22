@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../AppConstants.dart';
+import '../pantallas/MantenimientoClientes.dart';
 
 class Menulayout extends StatelessWidget {
   const Menulayout({super.key});
@@ -46,6 +47,17 @@ class Menulayout extends StatelessWidget {
             title: const Text('Contáctanos'),
             onTap: () {
               Navigator.pushNamed(context, '/contactanos');
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.person_sharp),
+            title: const Text('Mantenimiento Clientes'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ClientMaintenanceScreen()),
+              );
             },
           ),
         ],
