@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "331845824773",
+    "project_id": "venta-electrodmtcs",
+    "storage_bucket": "venta-electrodmtcs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331845824773:android:c242323b47db854494876c",
+        "android_client_info": {
+          "package_name": "com.gr1.eltrdm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFTeUDug3eTtzLWgIDFHwdbL-3KQX3VxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

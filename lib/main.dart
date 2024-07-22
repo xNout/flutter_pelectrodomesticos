@@ -1,13 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
-import 'AppConstants.dart';
+import 'firebase_options.dart';
 import 'layout/MainLayout.dart';
 import 'login.dart';
 import 'pantallas/Contactanos.dart';
 import 'pantallas/NuestrasTiendas.dart';
 import 'pantallas/SobreNosotros.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MainApp());
 }
 
