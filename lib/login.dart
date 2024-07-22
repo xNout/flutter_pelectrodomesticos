@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'layout/MainLayout.dart';
+
 class LoginForm extends StatefulWidget {
   @override
   _LoginFormState createState() => _LoginFormState();
@@ -34,9 +36,8 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blue[100],
-      body: Center(
+    return MainLayout(
+      content: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Card(
@@ -102,7 +103,11 @@ class _LoginFormState extends State<LoginForm> {
                     ),
                     SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          Navigator.pushNamed(context, '/home');
+                        }
+                      },
                       style: ElevatedButton.styleFrom(
                         padding:
                             EdgeInsets.symmetric(horizontal: 50, vertical: 15),

@@ -24,6 +24,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: const HomePage(),
       routes: {
+        '/home': (context) => const HomePage(),
         '/nuestras_tiendas': (context) => const NuestrasTiendas(),
         '/sobre_nosotros': (context) => const SobreNosotros(),
         '/contactanos': (context) => const Contactanos(),
