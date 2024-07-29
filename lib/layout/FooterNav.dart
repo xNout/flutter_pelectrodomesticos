@@ -15,6 +15,24 @@ class FooterLayout extends StatefulWidget {
 }
 
 class _CustomBottomNavigationBarState extends State<FooterLayout> {
+  void _onItemTapped(int index) {
+    switch (index) {
+      case 0:
+        Navigator.pushNamed(context, '/home');
+        break;
+      case 1:
+        Navigator.pushNamed(context, '/categorias');
+        break;
+      case 2:
+        Navigator.pushNamed(context, '/wishlist');
+        break;
+      case 3:
+        Navigator.pushNamed(context, '/cart');
+        break;
+    }
+    widget.onItemTapped(index);
+  }
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -42,7 +60,7 @@ class _CustomBottomNavigationBarState extends State<FooterLayout> {
       selectedLabelStyle: const TextStyle(fontSize: 12),
       unselectedLabelStyle: const TextStyle(fontSize: 8),
       showUnselectedLabels: true,
-      onTap: widget.onItemTapped,
+      onTap: _onItemTapped,
     );
   }
 }

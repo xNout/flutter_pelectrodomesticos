@@ -1,9 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:prfinal/pantallas/WishList.dart';
 import 'firebase_options.dart';
 import 'layout/MainLayout.dart';
 import 'login.dart';
+import 'pantallas/Categories.dart';
 import 'pantallas/Contactanos.dart';
+import 'pantallas/HomePage.dart';
 import 'pantallas/NuestrasTiendas.dart';
 import 'pantallas/SobreNosotros.dart';
 
@@ -22,27 +25,16 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const HomePage(),
+      home: HomePage(),
       routes: {
-        '/home': (context) => const HomePage(),
+        '/home': (context) => HomePage(),
+        '/wishlist': (context) => Wishlist(),
         '/nuestras_tiendas': (context) => const NuestrasTiendas(),
         '/sobre_nosotros': (context) => const SobreNosotros(),
         '/contactanos': (context) => const Contactanos(),
+        '/categorias': (context) => const Categories(),
         '/login': (context) => LoginForm(),
       },
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MainLayout(
-      content: Center(
-        child: Text('Contenido de la página principal'),
-      ),
     );
   }
 }

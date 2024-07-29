@@ -38,6 +38,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   firebase_core: ^3.2.0
   cloud_firestore: ^5.1.0
+  youtube_player_flutter: ^9.0.1
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +67,11 @@ flutter:
   assets:
     - images/sylus.png
     - images/logo.png
+    - images/filenotfound.png
+    - images/banner-01.jpg
+    - images/banner-02.jpg
+    - images/banner-03.png
+    - images/banner-04.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

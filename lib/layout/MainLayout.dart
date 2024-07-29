@@ -56,7 +56,15 @@ class _MainLayoutState extends State<MainLayout> {
         ],
       ),
       drawer: const Menulayout(),
-      body: widget.content,
+      body: Container(
+        color: Colors.grey[200],
+        width: double.infinity,
+        height: double.infinity,
+        child: widget.content,
+        /* child: SingleChildScrollView(
+          child: widget.content,
+        ), */
+      ),
       bottomNavigationBar: FooterLayout(
         onItemTapped: _onItemTapped,
         selectedIndex: _selectedIndex,

@@ -49,7 +49,7 @@ class Menulayout extends StatelessWidget {
               Navigator.pushNamed(context, '/contactanos');
             },
           ),
-          ListTile(
+          /* ListTile(
             leading: const Icon(Icons.person_sharp),
             title: const Text('Mantenimiento Clientes'),
             onTap: () {
@@ -59,7 +59,7 @@ class Menulayout extends StatelessWidget {
                     builder: (context) => ClientMaintenanceScreen()),
               );
             },
-          ),
+          ), */
         ],
       ),
     );
