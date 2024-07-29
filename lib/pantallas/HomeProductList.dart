@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../AppConstants.dart';
 import '../layout/BtCard.dart';
+import '../layout/LoadingIndicator.dart';
 import '../models/Category.dart';
 import '../models/Product.dart';
 
@@ -93,6 +94,41 @@ class _ProductListState extends State<ProductList> {
     }
   }
 
+  Future<void> addToCart(Product product) async {
+    LoadingOverlay().show(context);
+
+    try {
+      DocumentReference cartRef = FirebaseFirestore.instance
+          .collection('cart')
+          .doc('userId') // Reemplaza 'userId' con el ID del usuario real
+          .collection('items')
+          .doc(product.id);
+
+      DocumentSnapshot cartSnapshot = await cartRef.get();
+
+      if (cartSnapshot.exists) {
+        cartRef.update({
+          'quantity': FieldValue.increment(1),
+        });
+      } else {
+        cartRef.set({
+          'name': product.name,
+          'image': product.image,
+          'price': product.price,
+          'quantity': 1,
+        });
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Se añadió el producto al carrito')),
+      );
+    } catch (e) {
+      print('Error adding to cart: $e');
+    } finally {
+      LoadingOverlay().hide();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return isLoading
@@ -171,7 +207,9 @@ class _ProductListState extends State<ProductList> {
                                 },
                               ),
                               ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  addToCart(product);
+                                },
                                 style: ElevatedButton.styleFrom(
                                   foregroundColor: Colors.white,
                                   backgroundColor: AppConstants.sylusColor,

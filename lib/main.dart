@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:prfinal/pantallas/CartPage.dart';
 import 'package:prfinal/pantallas/WishList.dart';
 import 'firebase_options.dart';
 import 'layout/MainLayout.dart';
@@ -29,6 +30,7 @@ class MainApp extends StatelessWidget {
       routes: {
         '/home': (context) => HomePage(),
         '/wishlist': (context) => Wishlist(),
+        '/cart': (context) => CartPage(),
         '/nuestras_tiendas': (context) => const NuestrasTiendas(),
         '/sobre_nosotros': (context) => const SobreNosotros(),
         '/contactanos': (context) => const Contactanos(),
